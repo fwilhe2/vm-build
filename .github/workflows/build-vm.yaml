@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         branch: [master, 2.3.0]
-        flavor: [bionic64server]
+        flavor: [focal64server]
     env:
        BRANCH: ${{ matrix.branch }}
        FLAVOR: ${{ matrix.flavor }}
@@ -33,7 +33,7 @@ jobs:
               python -m pip install pexpect
               sudo kvm-ok || echo "kvm-ok failed"
       - name: Check out Mininet
-        run:  git clone https://github.com/mininet/mininet
+        run:  git clone https://github.com/fwilhe2/mininet
       - name: Build Ubuntu ${{ matrix.flavor }} VM
         run:  |
               python mininet/util/vm/build.py -v -b master -z --nokvm ${{ matrix.flavor }}

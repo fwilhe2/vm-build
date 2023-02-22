@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         branch: [master, 2.3.0]
-        flavor: [focal64server, bionic64server, xenial64server, xenial32server]
+        flavor: [bionic64server]
     env:
        BRANCH: ${{ matrix.branch }}
        FLAVOR: ${{ matrix.flavor }}
